@@ -1,25 +1,23 @@
 import calculator
+import pytest
 
-def test_add2numbers():
-    x=10
-    y=20
-    res=calculator.add2numbers(x,y)
-    assert res==x+y
+@pytest.mark.parametrize('a,b,c',[(3,2,1),(5,1,6),(8,2,10)])
+def test_add2numbers(a,b,c):
 
-def test_sub2numbers():
-    x=10
-    y=20
-    res=calculator.sub2numbers(x,y)
-    assert res==x-y
+    res=calculator.add2numbers(a,b)
+    assert res==a+b
+@pytest.mark.parametrize('a,b,c',[(3,2,1),(5,1,6),(8,2,10)])
+def test_sub2numbers(a,b,c):
 
-def test_mul2numbers():
-    x=10
-    y=20
-    res=calculator.mul2numbers(x,y)
-    assert res==x*y
+    res=calculator.sub2numbers(a,b)
+    assert res==a-b
+@pytest.mark.parametrize('a,b,c',[(3,2,1),(5,1,6),(8,2,10)])
+def test_mul2numbers(a,b,c):
 
-def test_div2numbers():
-    x=10
-    y=20
-    res=calculator.div2numbers(x,y)
-    assert res==x/y
+    res=calculator.mul2numbers(a,b)
+    assert res==a*b
+@pytest.mark.parametrize('a,b,c',[(3,2,1),(5,1,6),(8,2,10)])
+def test_div2numbers(a,b,c):
+
+    res=calculator.div2numbers(a,b)
+    assert res==a/b
